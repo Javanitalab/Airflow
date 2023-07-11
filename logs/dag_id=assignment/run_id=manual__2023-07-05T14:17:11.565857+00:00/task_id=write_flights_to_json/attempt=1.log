@@ -1,0 +1,26 @@
+[2023-07-05T14:17:29.385+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: assignment.write_flights_to_json manual__2023-07-05T14:17:11.565857+00:00 [queued]>
+[2023-07-05T14:17:29.401+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: assignment.write_flights_to_json manual__2023-07-05T14:17:11.565857+00:00 [queued]>
+[2023-07-05T14:17:29.401+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-07-05T14:17:29.428+0000] {taskinstance.py:1327} INFO - Executing <Task(_PythonDecoratedOperator): write_flights_to_json> on 2023-07-05 14:17:11.565857+00:00
+[2023-07-05T14:17:29.436+0000] {standard_task_runner.py:57} INFO - Started process 115 to run task
+[2023-07-05T14:17:29.440+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'assignment', 'write_flights_to_json', 'manual__2023-07-05T14:17:11.565857+00:00', '--job-id', '20', '--raw', '--subdir', 'DAGS_FOLDER/assignment.py', '--cfg-path', '/tmp/tmp7wssrmbd']
+[2023-07-05T14:17:29.441+0000] {standard_task_runner.py:85} INFO - Job 20: Subtask write_flights_to_json
+[2023-07-05T14:17:29.504+0000] {task_command.py:410} INFO - Running <TaskInstance: assignment.write_flights_to_json manual__2023-07-05T14:17:11.565857+00:00 [running]> on host da250f106141
+[2023-07-05T14:17:29.656+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='assignment' AIRFLOW_CTX_TASK_ID='write_flights_to_json' AIRFLOW_CTX_EXECUTION_DATE='2023-07-05T14:17:11.565857+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-07-05T14:17:11.565857+00:00'
+[2023-07-05T14:17:29.657+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/decorators/base.py", line 220, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/assignment.py", line 39, in write_flights_to_json
+    flights = json.loads(flights_text)
+  File "/usr/local/lib/python3.7/json/__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not list
+[2023-07-05T14:17:29.670+0000] {taskinstance.py:1350} INFO - Marking task as FAILED. dag_id=assignment, task_id=write_flights_to_json, execution_date=20230705T141711, start_date=20230705T141729, end_date=20230705T141729
+[2023-07-05T14:17:29.687+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 20 for task write_flights_to_json (the JSON object must be str, bytes or bytearray, not list; 115)
+[2023-07-05T14:17:29.733+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2023-07-05T14:17:29.761+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

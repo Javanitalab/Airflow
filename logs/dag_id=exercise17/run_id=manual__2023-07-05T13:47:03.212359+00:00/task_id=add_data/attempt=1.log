@@ -1,0 +1,17 @@
+[2023-07-05T13:47:06.830+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: exercise17.add_data manual__2023-07-05T13:47:03.212359+00:00 [queued]>
+[2023-07-05T13:47:06.843+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: exercise17.add_data manual__2023-07-05T13:47:03.212359+00:00 [queued]>
+[2023-07-05T13:47:06.843+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-07-05T13:47:06.861+0000] {taskinstance.py:1327} INFO - Executing <Task(SqliteOperator): add_data> on 2023-07-05 13:47:03.212359+00:00
+[2023-07-05T13:47:06.870+0000] {standard_task_runner.py:57} INFO - Started process 453 to run task
+[2023-07-05T13:47:06.873+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'exercise17', 'add_data', 'manual__2023-07-05T13:47:03.212359+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/sqlexercise.py', '--cfg-path', '/tmp/tmpbdef89ou']
+[2023-07-05T13:47:06.874+0000] {standard_task_runner.py:85} INFO - Job 16: Subtask add_data
+[2023-07-05T13:47:06.929+0000] {task_command.py:410} INFO - Running <TaskInstance: exercise17.add_data manual__2023-07-05T13:47:03.212359+00:00 [running]> on host da250f106141
+[2023-07-05T13:47:07.066+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='exercise17' AIRFLOW_CTX_TASK_ID='add_data' AIRFLOW_CTX_EXECUTION_DATE='2023-07-05T13:47:03.212359+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-07-05T13:47:03.212359+00:00'
+[2023-07-05T13:47:07.068+0000] {sql.py:265} INFO - Executing: INSERT INTO users VALUES("0001", "Pierre", "Paris", "EPITA" , 36, 1);
+[2023-07-05T13:47:07.081+0000] {base.py:73} INFO - Using connection ID 'moja' for task execution.
+[2023-07-05T13:47:07.191+0000] {base.py:73} INFO - Using connection ID 'moja' for task execution.
+[2023-07-05T13:47:07.195+0000] {sql.py:375} INFO - Running statement: INSERT INTO users VALUES("0001", "Pierre", "Paris", "EPITA" , 36, 1);, parameters: None
+[2023-07-05T13:47:07.197+0000] {sql.py:384} INFO - Rows affected: 1
+[2023-07-05T13:47:07.218+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=exercise17, task_id=add_data, execution_date=20230705T134703, start_date=20230705T134706, end_date=20230705T134707
+[2023-07-05T13:47:07.246+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-07-05T13:47:07.273+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check
